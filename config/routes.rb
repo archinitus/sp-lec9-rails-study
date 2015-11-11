@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   root 'twit#list'
   
+  get 'user/create'
+
+  get 'user/login'
+  
   get 'twit/list'
 
   get 'twit/list_byuser'
@@ -15,6 +19,6 @@ Rails.application.routes.draw do
   
   post 'twit/createComment'
   
-  get 'twit/deleteComment'
+  post 'twit/deleteComment'
 
 end

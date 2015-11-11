@@ -45,6 +45,7 @@ class TwitController < ApplicationController
     comment = Comment.new
     comment.twit_id = params[:twit_id]
     comment.username = params[:comment_name]
+    comment.password = Digest::SHA256.hexdigest params[:comment_password]
     comment.contents = params[:comment_contents]
     comment.save
     
@@ -53,7 +54,10 @@ class TwitController < ApplicationController
   
   def deleteComment
     @id = params[:id]
-    Comment.destroy(@id)
+    @pw = Digest::SHA256.hexdigest params[:pw]
+    if(@pw == Comment.find(@id).password)
+      Comment.destroy(@id)
+    end
     
     redirect_to action: "list"
   end
