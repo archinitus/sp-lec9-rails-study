@@ -3,3 +3,12 @@ function deleteComment() {
     $('#comment_pw').val(password);
     $('#comment_del_form').submit();
 }
+
+$(document).ready(function(){
+    $('#test').click(function(event) {
+        event.preventDefault()
+        $('#comment_id').val($('#test').attr('href'));
+        //console.log("comment_id: " + $('#comment_id').val());
+        $('#myModal').modal('show')
+    });    
+});
