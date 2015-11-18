@@ -43,12 +43,7 @@
                     <div class="panel-heading">
                         Comments @<%= comment.username %>
                         <div style="float:right; display:inline;">
-                            <!--<form id="comment_del_form" class="form-inline" action="/twit/deleteComment" method="post">-->
-                            <!--    <a href="#" onclick="deleteComment()">삭제</a>-->
-                            <!--    <input type="hidden" name="id" id="comment_id" value="<%= comment.id %>">-->
-                            <!--    <input type="hidden" name="pw" id="comment_pw">-->
-                            <!--</form>-->
-                            <a href="<%= comment.id %>" id="test">삭제</a>
+                            <a href="<%= comment.id %>" class="test">삭제</a>
                         </div>
                     </div>
                     <div class="panel-body">

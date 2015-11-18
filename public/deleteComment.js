@@ -5,9 +5,10 @@ function deleteComment() {
 }
 
 $(document).ready(function(){
-    $('#test').click(function(event) {
+    $('.test').click(function(event) {
         event.preventDefault()
-        $('#comment_id').val($('#test').attr('href'));
+        console.log("$(this)[0] : " + $(this).attr('href'));
+        $('#comment_id').val($(this).attr('href'));
         //console.log("comment_id: " + $('#comment_id').val());
         $('#myModal').modal('show')
     });    
