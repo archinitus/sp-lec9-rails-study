@@ -2,12 +2,19 @@
     <h1>Twit#list</h1>
     <p>트윗 남기기</p>
     <form action="/twit/create" method="post" 
-    class="form-horizontal">
+    class="form-horizontal" enctype="multipart/form-data">
         <div class="form-group">
             <label for="username" 
             class="col-sm-2 control-label">이름</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" name="username" value="<%=@username%>">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="username" 
+            class="col-sm-2 control-label">파일(사진) 업로드</label>
+            <div class="col-sm-10">
+                <input type="file" name="image_file">
             </div>
         </div>
         <div class="form-group">
@@ -36,7 +43,8 @@
                 </div>
             </div>
             <div class="panel-body">
-                <%=twit.contents%>
+                <p><img src="<%=twit.my_image.url%>"></p>
+                <p><%=twit.contents%></p>
             </div>
             <% twit.comments.each do |comment| %>
                 <div class="panel panel-default" style="margin: 10px">

@@ -12,6 +12,7 @@ class TwitController < ApplicationController
       new_twit = Twit.new
       new_twit.username = params[:username]
       new_twit.contents = params[:contents]
+      new_twit.my_image = params[:image_file]
       new_twit.save
     end
     
